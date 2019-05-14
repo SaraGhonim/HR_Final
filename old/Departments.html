@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+    <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="Logo.png">
+        <title>Departments</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="analysis & Design & implmentation & maintenance phases ">
+        
+        <link rel="stylesheet" href="Departments.css">
+        <link rel="stylesheet" href="Departments.js">
+    
+    </head>
+    
+    <header>
+        <div class="head">
+        <img src="logo.png" alt="Tanta Unversity">
+        <h1>Departments of Software Engineering</h1>
+        
+        </div>
+    </header>
+    <body  >
+        <div class="topnav" position: fixed>
+            <a class="active" href="Home.html" target="_blank" >Home</a> 
+            <select class="Departments" style="width:240px;" name="Departments" onchange="location = this.value;">
+               <option value="1" hidden">Departments</option>
+                <option value="planning.html" >Planning</option>
+                <option value="Analysis.html">Analysis</option>
+                <option value="Design.html">Design</option>
+                <option value="Implmentation.html">Implmentation</option>
+                <option value="Testing.html">Testing</option>
+                <option value="Maintainance.html">Maintainance</option>
+            </select>
+            
+            <a href="about.html" target="_blank">About</a>
+            <a href="contact_us.html" target="_blank">Contact US</a>
+            <!--<input type="text" placeholder="Search.." >-->
+        </div>
+        <form>
+           <!--<img class="depimg" src="dep.jpg" alt="" width="1200" height="720" >-->
+           <button type=button id=f1 onclick="post">ADD Department</button>
+           <button type=button id=f2 onclick="post">UPDATE Department</button><br>
+           <button type=button id=f3 onclick="func(3)">DELETE Department</button>
+         </form>
+
+       
+        
+         <input type="button" id=f1 value="Department Details" onclick=" GenerateTable()" />
+         <hr />
+         <div id="dvTable"></div>
+      
+            
+    <script type="text/javascript" class="table">
+    
+        function GenerateTable() {
+            //Build an array containing Customer records.
+            var customers = new Array();
+            customers.push(["Department Name", " capacity","manager","employee","project"]);
+            customers.push([ "planning", "3","safi","Ahmed","mobile Application"]);
+            customers.push([ "Analysis", "4","Heelan","3echka","web page"]);
+           
+            //Create a HTML Table element.
+            var table = document.createElement("TABLE");
+            table.border = "1";
+     
+            //Get the count of columns.
+            var columnCount = customers[0].length;
+     
+            //Add the header row.
+            var row = table.insertRow(-1);
+            for (var i = 0; i < columnCount; i++) {
+                var headerCell = document.createElement("TH");
+                headerCell.innerHTML = customers[0][i];
+                row.appendChild(headerCell);
+            }
+     
+            //Add the data rows.
+            for (var i = 1; i < customers.length; i++) {
+                row = table.insertRow(-1);
+                for (var j = 0; j < columnCount; j++) {
+                    var cell = row.insertCell(-1);
+                    cell.innerHTML = customers[i][j];
+                }
+            }
+     
+            var dvTable = document.getElementById("dvTable");
+            dvTable.innerHTML = "";
+            dvTable.appendChild(table);
+        }
+        </script>
+        </body>
+        </html>

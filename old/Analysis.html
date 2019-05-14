@@ -1,0 +1,92 @@
+<!DOCTYPE <!DOCTYPE html>
+
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <style>
+  
+    .add{
+      
+     text-align: center;
+    }
+    .add h3{
+        font-family: Arial;
+        font-size: 40px;
+        color: rgb(187, 46, 46);
+    }
+    .add input{
+        width: 400px;
+        height: 50px;
+        border-radius: 15px;
+        border-color:  rgb(204, 55, 55);
+        border-width: 4px;
+        background-color:rgb(240, 239, 239);
+        outline: none;
+        font-size: 25px;
+        padding-left: 15px;
+        margin-bottom: 10%;
+       
+        
+    }
+    .add button{
+        width: 100px;
+        height: 50px;
+        border-radius: 15px;
+        outline: none;
+        font-family: Arial;
+        font-size: 20px;
+        font:biod;
+        color:white;
+        background-color:rgb(136, 9, 83);
+    }
+    
+    </style>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Analysis Department</title>
+        <link rel="icon" href="analysis_logo.jpg" >
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Departments.css">
+        
+    </head>
+    <header>
+            <div class="head">
+            <img src="plan.jpg" alt="Tanta Unversity" style="border-radius: 15px;">
+            <h1>Analysis Department</h1>
+            </div>
+    </header>
+    <body>
+        <div class="topnav" position: fixed>
+            <a class="active" href="Home.html" target="_blank" >Home</a>
+            <a href="Departments.html" target="_blank">Main</a>
+            <a href="projects.html" target="_blank">Projects</a>
+            <a href="Employess.html" target="_blank">Employess</a>
+            <a href="about.html" target="_blank">About</a>
+            <input type="text" placeholder="Search.." >
+            
+        </div>
+        
+        <div  class="image" >   
+                <h2>Welcome in Analysis Department !</h2>
+                <img src="analysis.jpg" alt="" width="1280" height="580" style="padding:20px 14%;"> 
+                
+            
+        </div>
+        
+       <div class="add">
+            <h3>Add Project</h3>
+            <input type="text" placeholder="Enter Project">
+            <button  onclick="javascript:alert('Project sussesfully added')">Add</button>
+        </div>
+    <script>
+         var input = document.getElementById("myInput");
+         input.addEventListener("keyup", function(event) {
+         if (event.keyCode === 13) {
+         event.preventDefault();
+         document.getElementById("myBtn").click();
+        }
+       });
+      </script>
+        
+    </body>
+</html>

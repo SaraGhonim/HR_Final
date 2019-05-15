@@ -5,7 +5,7 @@
         <div class="back" style="text-align:center">
             
             <form class="form-style-8">
-                <input type="text" id="input_name" placeholder="Department Name" value=""><br>
+                <input type="text" id="input_name" placeholder="Department Name" value="" required><br>
             <button class="b" v-on:click="submit">submit</button>        
         
         
@@ -26,15 +26,18 @@ export default {
                 var name = document.getElementById("input_name").value;
 
                 console.log(name);
-               
+        if(!name){
+            alert("Please enter a name")
+        }    
+        else{   
         axios.delete('http://localhost:8000/Departments/deleteDepartment/'+name)
         .then(response => {
-            alert("Submitted successfully")
-                console.log("xcvbh")      
+            alert(response.data)
+                    
         })
-        .catch(error => console.log('this is the error: '+ error.message))
+        .catch(error => alert(error.message))
         
-    }
+    }}
   }
 }
 </script>

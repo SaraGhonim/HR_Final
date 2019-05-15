@@ -12,14 +12,6 @@
     <body  >
         <div class="topnav" position: fixed>
             <a class="active" href="Home.html" target="_blank" >Home</a> 
-            <a href="http://localhost:8080/#/details">Department Details</a>
-            <a href="http://localhost:8080/#/about">About</a>
-            <a href="http://localhost:8080/#/contact_us">Contact US</a>
-            <!--<input type="text" placeholder="Search.." >-->
-        </div>
-        <form>
-           <!--<img class="depimg" src="dep.jpg" alt="" width="1200" height="720" >-->
-           <div class="dep">
             <select class="Departments" style="width:290px;" name="Departments" onchange="location = this.value;" >
                 <option value="1" hidden>Departments</option>
                 <option value="http://localhost:8080/#/implementation" >implementation</option>
@@ -27,12 +19,28 @@
                 <option value="http://localhost:8080/#/design">Design</option>
                 <option value="http://localhost:8080/#/testing">Testing</option>
            </select>
-           </div>
-           
-           <button type=button id=f1 onclick="location.href='http://localhost:8080/#/add'">ADD Department</button><br>
-           <button type=button id=f2 onclick="location.href='http://localhost:8080/#/update'">UPDATE Department</button><br>
-           <button type=button id=f3 onclick="location.href='http://localhost:8080/#/delete'">DELETE Department</button><br>
-         </form>
+           <router-link to="/details">
+              <a>Department Details</a>
+           </router-link>
+           <router-link to="/about">
+              <a>About</a>
+           </router-link>
+           <router-link to="/contact_us">
+              <a>Contact_US</a>
+           </router-link>
+            
+        </div><br /><br />
+        <form>
+          <router-link to="/add">
+              <button >ADD Department</button>
+          </router-link><br /><br />
+          <router-link to="/update">
+              <button >UPDATE Department</button>
+          </router-link><br /><br />
+          <router-link to="/delete">
+              <button >DELETE Department</button>
+          </router-link><br /><br />
+        </form>
 
   </body>
 </html>
@@ -158,17 +166,18 @@ export default {
   }
   .Departments  {
     
-    position: absolute;
-    border-radius: 10px;
+   
+    
     text-align: center;
-    background-color: rgb(202, 216, 226);
-    padding: 1% 1%;
+    background-color: rgb(218, 214, 218);
+    
     outline: none;
     font-size:30px ;
     font-family: Arial, Helvetica, sans-serif;
-    left: 42%;
-    top:40%;
-    margin: 5% 1% 1% 5%;
+    
+    top:80%;
+    border:none;
+    padding: 15px ;
     cursor: pointer;
    
     
@@ -236,51 +245,16 @@ export default {
   text-align: center;
   
   }
-  #f1{
-    position: relative;
-    border-radius: 10px;
-    text-align: center;
-    background-color: rgb(202, 216, 226);
-    padding: 1% 1%;
-    outline: none;
-    font:20px bold ;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 5% 1% 5%;
-    cursor: pointer;
-    
-  }
-  #f2{
-    position: relative;
-    border-radius: 10px;
-    text-align: center;
-    background-color: rgb(202, 216, 226);
-    padding: 1% 1%;
-    outline: none;
-    font:20px bold ;
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
-    margin: 5% 1% 5%;
-    
-  }
-  #f3{
-    border-radius: 10px;
-    text-align: center;
-    background-color: rgb(202, 216, 226);
-    padding: 1% 1%;
-    outline: none;
-    font:20px bold ;
-    font-family: Arial, Helvetica, sans-serif;
-    
-    cursor: pointer;
-    
-  }
-  #f1:hover, #f2:hover, #f3:hover {
-    background-color: rgb(204, 229, 253);
-    color :rgb(126, 141, 163);
-    font-weight: bold; }
-
+ button {padding: 14px 40px; 
+background-color: rgb(129, 174, 211);
+font-size: 20px;
+width: 250px;
+color: white;}
   td {
       vertical-align: top;
   }
+a{
+  width: 250px;
 
+}
 </style>

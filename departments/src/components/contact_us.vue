@@ -35,27 +35,29 @@
         h1{
            font: 100px bold;
            font-family: inherit ;
-           color: rgb(96, 116, 165);
+           color:rgb(255, 255, 255);
            text-align: center;
            padding-top: 20px;
           
          }
         img{
             position: absolute;
-            padding-left: 20%;
+            padding-left: 10%;
             
             top: 40%;
         }
         ul{
             position: absolute;
             padding-top: 0.5%;
-            padding-left: 12%;
+            padding-left: 32%;
             font: 40px bold;
+            color:rgb(255, 255, 255);
            font-family: serif ;
         }
         li{
-            padding-bottom : 40px;
-            
+            padding-bottom : 50px;
+           
+
         }
         div{
            overflow:hidden;

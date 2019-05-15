@@ -63,8 +63,8 @@
        }
        h4,h5{
         font-family: Sans-serif;
-        
-        font-size: 30px;
+        color:rgb(255, 255, 255);
+        font-size: 40px;
         font:bold;
         padding-left: 100px;
        }
@@ -74,20 +74,23 @@
        p{
            font:bold ;
            font-family: Sans-serif;
-           font-size: 25px;
+           font-size: 35px;
            padding-left: 60px;
+           color:rgb(255, 255, 255);
        }
        ol{
            font:bold ;
            padding-left: 120px;
-           font-size: 25px;
+           font-size: 35px;
            font-family: Sans-serif;
+           color:rgb(255, 255, 255);
        }
     
        ul{
            padding-left: 180px;
-           font-size: 25px;
+           font-size: 35px;
            font-family: Sans-serif;
+           color:rgb(255, 255, 255);
        }
        div{
            overflow:hidden;

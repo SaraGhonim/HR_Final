@@ -1,6 +1,5 @@
 const express = require('express');
 const Depatrments = require('../models/Department');
-
 const router = express.Router();
 
 

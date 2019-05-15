@@ -5,14 +5,12 @@
         <div class="back" style="text-align:center">
             
             <form class="form-style-8">
-                <input type="text" id="input_name" placeholder="Department Name" value=""><br>
+                <input type="text" id="input_name" placeholder="Department Name" value="" required><br>
                 <input type="number" id="input_Capacity" placeholder="capacity" value=""><br>
-                <input type="text" id="input_Manager" placeholder="Manager Name" value=""><br>
+                <input type="text" id="input_Manager" placeholder="Manager Name" value="" required><br>
                 <input type="text" id="input_Associated_Employess" placeholder="Associated Employees" value=""><br>
                 <input type="text" id="input_Associated_Projects" placeholder="Associated Projects " value=""><br>
-            <button class="b" v-on:click="submit">submit</button>        
-        
-        
+                <button class="b" v-on:click="submit">Submit</button>        
         </form>
         </div>
         
@@ -34,15 +32,18 @@ export default {
                 var manager = document.getElementById("input_Manager").value;
 
                 var associatedEmployees = document.getElementById("input_Associated_Employess").value;
-
+                var associatedEmployees = associatedEmployees.split(",");
                 var associatedProjects = document.getElementById("input_Associated_Projects").value;
+                var associatedProjects = associatedProjects.split(",");
                 console.log(name);
                 console.log(capacity);
                 console.log(manager);
                 console.log(associatedEmployees);
                 console.log(associatedProjects);
-
-       
+        if(!name||!manager){
+            alert("Please fill required data (name,manager)")
+        }
+        else{
         axios.post('http://localhost:8000/Departments/addNewDepartment',{
                 name: name,
                 capacity: capacity,
@@ -50,13 +51,12 @@ export default {
                 associatedEmployees: associatedEmployees,
                 associatedProjects: associatedProjects
         })
-        .then(response => {
-            alert("Submitted successfully")
-                console.log("xcvbh")      
+        .then(response =>{
+            alert(response.data)
         })
-        .catch(error => console.log('this is the error: '+ error.message))
+        .catch(error => alert(error.message))
         
-    }
+    }}
   }
 }
 </script>
